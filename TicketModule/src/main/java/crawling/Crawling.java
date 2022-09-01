@@ -2,7 +2,7 @@ package crawling;
 
 public class Crawling {
 	private int SEQ;
-	private String URL;
+	private String url;
 	private String field;
 	private String title;
 	private String reser_data;
@@ -12,12 +12,6 @@ public class Crawling {
 	}
 	public void setSEQ(int sEQ) {
 		SEQ = sEQ;
-	}
-	public String getURL() {
-		return URL;
-	}
-	public void setURL(String uRL) {
-		URL = uRL;
 	}
 	public String getField() {
 		return field;
@@ -42,6 +36,12 @@ public class Crawling {
 	}
 	public void setInfo(String info) {
 		this.info = info;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }
