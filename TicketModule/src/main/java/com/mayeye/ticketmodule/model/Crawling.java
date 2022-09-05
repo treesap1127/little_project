@@ -1,18 +1,13 @@
-package crawling;
+package com.mayeye.ticketmodule.model;
 
 public class Crawling {
-	private int SEQ;
+	private int seq;
 	private String url;
 	private String field;
 	private String title;
-	private String reser_data;
+	private String reserData;
 	private String info;
-	public int getSEQ() {
-		return SEQ;
-	}
-	public void setSEQ(int sEQ) {
-		SEQ = sEQ;
-	}
+	
 	public String getField() {
 		return field;
 	}
@@ -25,12 +20,6 @@ public class Crawling {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getReser_data() {
-		return reser_data;
-	}
-	public void setReser_data(String reser_data) {
-		this.reser_data = reser_data;
-	}
 	public String getInfo() {
 		return info;
 	}
@@ -42,6 +31,18 @@ public class Crawling {
 	}
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public String getReserData() {
+		return reserData;
+	}
+	public void setReserData(String reserData) {
+		this.reserData = reserData;
 	}
 
 }

@@ -9,5 +9,6 @@
 <body>
 <h1>  기본 페이지 </h1>
 <a href="/crawling">크롤링하러가기</a>
+<a href="/list">리스트보기</a>
 </body>
 </html>

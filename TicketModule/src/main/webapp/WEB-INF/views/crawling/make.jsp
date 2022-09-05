@@ -13,20 +13,19 @@
 <script src="js/make.js"></script>
 </head>
 <body>
-	<form method="post">
-		<label for="URL">URL:</label>
-		<input type="text" id="URL" name="URL" placeholder="URL를 입력해주세요"/>
-		<label for="title">title:</label>		
-		<input type="text" id="title" name="title" placeholder="title를 입력해주세요"/>
-		<label for="Field">Field:</label>
-		<input type="text" id="field" name="field" placeholder="선택자를 입력해주세요"/>
-		<a href="#" class="btn btn-primary" onclick="info()">제출하기!</a>
-	</form>
-	
-	<div>
-	<a href="/" class="btn btn-warning">뒤로가기!</a>
-		<h1>아래에 데이터가 나옵니다!</h1>
-		<div id="info" style="margin:50px;color:blue;"></div>
-	</div>
+		<div class="dataset">
+			<label for="URL">URL:</label>
+			<input type="text" id="URL" name="URL" placeholder="URL를 입력해주세요"/>
+			<label for="title">title:</label>		
+			<input type="text" id="title" name="title" placeholder="title를 입력해주세요"/>
+			<label for="Field">Field:</label>
+			<input type="text" id="field" name="field" placeholder="선택자를 입력해주세요"/>
+			<a href="#" class="btn btn-primary" onclick="info()">결과보기!</a>
+		</div>
+		<div>
+		<a href="/" class="btn btn-warning">뒤로가기!</a>
+			<h1>아래에 데이터가 나옵니다!</h1>
+			<div id="info" style="margin:50px;color:blue;"></div>
+		</div>
 </body>
 </html>
