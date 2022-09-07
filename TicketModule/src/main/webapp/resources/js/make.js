@@ -5,7 +5,7 @@ function info(){
 		const item = {field:field,title:title,url:URL}
 		console.log(item);
 		$.ajax({
-	        url:"/make",
+	        url:context+"/make",
 	        method: "POST",
 	        contentType: "application/json",
 	        dataType: "text",
@@ -14,7 +14,8 @@ function info(){
 	        success: result => {
 					console.log(result);
 					$("#info").text(result);
-					$(".dataset").append(`<a href="#" class="btn btn-primary" onclick="save()">저장하기!</a>`);
+					$(".save").remove();
+					$(".dataset").append(`<a href="#" class="btn btn-primary save" onclick="save()">저장하기!</a>`);
 					
 	},
 	        error: (xhr, result) => console.log(`[실패] print`)
@@ -27,7 +28,7 @@ function save(){
 		URL=$("#URL").val();
 		const data = {field:field,title:title,url:URL}
 		$.ajax({
-	        url:"/save",
+	        url:context+"/save",
 	        method: "POST",
 	        contentType: "application/json",
 	        dataType: "text",

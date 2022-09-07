@@ -10,6 +10,9 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	var context="${pageContext.request.contextPath}";
+</script>
 <script src="js/make.js"></script>
 </head>
 <body>
@@ -23,7 +26,7 @@
 			<a href="#" class="btn btn-primary" onclick="info()">결과보기!</a>
 		</div>
 		<div>
-		<a href="/" class="btn btn-warning">뒤로가기!</a>
+		<a href="<c:url value="/"/>" class="btn btn-warning">뒤로가기!</a>
 			<h1>아래에 데이터가 나옵니다!</h1>
 			<div id="info" style="margin:50px;color:blue;"></div>
 		</div>

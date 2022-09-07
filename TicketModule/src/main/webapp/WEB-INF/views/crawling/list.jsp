@@ -12,8 +12,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/">뒤로가기</a>
-<table>
+<a class="btn btn-primary" href="<c:url value="/"/>">뒤로가기</a>
+<table class="table table-sm" >
 	<tr>
 		<td>seq</td>
 		<td>title</td>
@@ -24,7 +24,7 @@
 	<c:forEach items="${list}" var="item">
 	<tr>
 		<td>${item.seq}</td>
-		<td style="color:red;"><a href="/view?seq=${item.seq}">${item.title}</a></td>
+		<td style="color:red;"><a href="<c:url value="/view?seq=${item.seq}"/>">${item.title}</a></td>
 		<td>${item.url}</td>
 		<td>${item.field}</td>
 		<td>${item.reserData}</td>
