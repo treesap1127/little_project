@@ -13,7 +13,8 @@ function info(){
 	        
 	        success: result => {
 					console.log(result);
-					$("#info").text(result);
+					$("#info").remove();
+					$("#info").append(result);
 					$(".save").remove();
 					$(".dataset").append(`<a href="#" class="btn btn-primary save" onclick="save()">저장하기!</a>`);
 					
@@ -38,6 +39,7 @@ function save(){
 					if(result1!="false"){
 					console.log(result1);
 					alert("저장되었습니다!")
+					$("#info").remove();
 					$("#info").text(result1);
 					}
 					else if(result1!="false"){

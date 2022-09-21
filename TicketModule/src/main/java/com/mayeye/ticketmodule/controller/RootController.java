@@ -42,12 +42,13 @@ public class RootController {
 			Elements element= doc.select(cra.getField());// 원하는 부분 가져오기
 			int num=1;
 				for(Element e: element) {
-					info+=e.text()+"="+num+"\n" ;
-				System.out.println("info="+info);
-				System.out.println("test="+e.text());
-				System.out.println("html="+e.html());
-				num++;
-			}
+					//info+=e.text()+"="+num+"\n" ;
+					info+=e.html();
+					System.out.println("info="+info);// 몇번째까지 넣은
+					System.out.println("test="+e.text());// 이게 순수 정보
+					System.out.println("html="+e.html());// 이게 태그 포함 정보
+					num++;
+				}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -86,9 +87,9 @@ public class RootController {
 			int num=1;
 				for(Element e: element) {
 					info+=e.text()+"="+num+"\n" ;
-				System.out.println("info="+info);
-				System.out.println("test="+e.text());
-				System.out.println("html="+e.html());
+				System.out.println("info="+info);// 몇번째까지 넣은
+				System.out.println("test="+e.text());// 이게 순수 정보
+				System.out.println("html="+e.html());// 이게 태그 포함 정보
 				num++;
 			}
 		} catch (IOException e) {

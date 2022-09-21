@@ -14,6 +14,8 @@
 	var context="${pageContext.request.contextPath}";
 </script>
 <script src="js/make.js"></script>
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/css/ticket/park.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/ticket/inter.css">
 </head>
 <body>
 		<div class="dataset">
