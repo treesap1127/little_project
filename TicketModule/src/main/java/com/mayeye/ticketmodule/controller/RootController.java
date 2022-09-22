@@ -9,6 +9,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +29,8 @@ import com.mayeye.ticketmodule.service.CrawlingService;
 public class RootController {
 	@Autowired
 	CrawlingService service;
+	
+
 	@RequestMapping("/")
 	public String index() {
 		return "index";
@@ -39,6 +46,7 @@ public class RootController {
 		String info = "";
 		try {
 			Document doc = Jsoup.connect(cra.getUrl()).get();//연결해서 가져옴
+			System.out.println(doc.getAllElements()); 
 			Elements element= doc.select(cra.getField());// 원하는 부분 가져오기
 			int num=1;
 				for(Element e: element) {
@@ -104,4 +112,53 @@ public class RootController {
 		return "crawling/view";
 	}
 	
+	@GetMapping("selenium")
+	public String selenium() {
+		return "selenium/make";
+	}
+	@RequestMapping(value = "/makeSe",produces = "application/text; charset=utf8")
+	public @ResponseBody String makeSe(@RequestBody Crawling cra) {
+		// 1. 드라이버 설치 경로
+		String DRIVER_ID = "webdriver.chrome.driver";
+		String DRIVER_PATH = "D:/selenium/chromedriver.exe";
+				
+		System.setProperty(DRIVER_ID, DRIVER_PATH);
+		WebDriver driver = new ChromeDriver();
+		String info = "";
+		try {
+			driver.get(cra.getUrl());
+			Thread.sleep(3000);
+			System.out.println(driver.getPageSource());
+			JavascriptExecutor js=(JavascriptExecutor) driver;
+			js.executeAsyncScript(cra.getScriptText());
+			Thread.sleep(4000);
+			List<WebElement> webElement=driver.findElements(By.cssSelector(cra.getField()));
+			
+			for(WebElement el: webElement) {
+				info+=el.getText();
+				el.getText();
+			}
+			 driver.quit();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		if(info.isEmpty()) {
+			return "fail";
+		}
+		return info;
+	}
+	
+	@RequestMapping(value = "/saveSe",produces = "application/text; charset=utf8")
+	public @ResponseBody String saveSe(@RequestBody Crawling cra) {
+		System.out.println(cra.getUrl()+"++URL++"+cra.getField()+"++Field++"+cra.getTitle()+"++Title");
+		Date now=new Date();
+		SimpleDateFormat sfd=new SimpleDateFormat("yyyy-MM-dd");
+		cra.setReserData(sfd.format(now));
+		
+			service.Sesave(cra);
+		
+		return "success";
+	}
 }

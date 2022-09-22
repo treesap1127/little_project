@@ -24,5 +24,9 @@ public class CrawlingServiceImpl implements CrawlingService {
 	public List<Crawling> list() {
 		return dao.list();
 	}
+	@Override
+	public void Sesave(Crawling cra) {
+		dao.Sesave(cra);
+	}
 
 }

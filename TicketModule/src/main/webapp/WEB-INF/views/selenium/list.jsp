@@ -22,14 +22,14 @@
 		<td>reserData</td>
 	</tr>
 	<c:forEach items="${list}" var="item">
-	<c:if test="${item.tag eq 1}">
-		<tr>
-			<td>${item.seq}</td>
-			<td style="color:red;"><a href="<c:url value="/view?seq=${item.seq}"/>">${item.title}</a></td>
-			<td>${item.url}</td>
-			<td>${item.field}</td>
-			<td>${item.reserData}</td>
-		</tr>
+	<c:if test="${item.tag eq 2}">
+	<tr>
+		<td>${item.seq}</td>
+		<td style="color:red;"><a href="<c:url value="/view?seq=${item.seq}"/>">${item.title}</a></td>
+		<td>${item.url}</td>
+		<td>${item.field}</td>
+		<td>${item.reserData}</td>
+	</tr>
 	</c:if>
 	</c:forEach>
 </table>

@@ -23,5 +23,9 @@ public class CrawlingDaoImpl implements CrawlingDao {
 	public List<Crawling> list() {
 		return sql.selectList("crawling.list");
 	}
+	@Override
+	public void Sesave(Crawling cra) {
+		sql.insert("crawling.sesave", cra);
+	}
 
 }

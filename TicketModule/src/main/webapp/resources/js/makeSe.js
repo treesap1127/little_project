@@ -2,10 +2,11 @@ function info(){
 		field=$("#field").val();
 		title=$("#title").val();
 		URL=$("#URL").val();
-		var item = {field:field,title:title,url:URL}
+		scriptText=$("#scriptText").val();
+		const item = {field:field,title:title,url:URL,scriptText:scriptText}
 		console.log(item);
 		$.ajax({
-	        url:context+"/make",
+	        url:context+"/makeSe",
 	        method: "POST",
 	        contentType: "application/json",
 	        dataType: "text",
@@ -21,29 +22,16 @@ function info(){
 	},
 	        error: (xhr, result) => console.log(`[실패] print`)
 	        });
-	        item = {field:'head',title:title,url:URL}
-	       $.ajax({
-	        url:context+"/make",
-	        method: "POST",
-	        contentType: "application/json",
-	        dataType: "text",
-	        data: JSON.stringify(item),
-	        
-	        success: result => {
-					$("head").append(result);
-					
-	},
-	        error: (xhr, result) => console.log(`[실패] print`)
-	        });
 	}
 
 function save(){
 		field=$("#field").val();
 		title=$("#title").val();
 		URL=$("#URL").val();
-		const data = {field:field,title:title,url:URL}
+		scriptText=$("#scriptText").val();
+		const data = {field:field,title:title,url:URL,scriptText:scriptText}
 		$.ajax({
-	        url:context+"/save",
+	        url:context+"/saveSe",
 	        method: "POST",
 	        contentType: "application/json",
 	        dataType: "text",

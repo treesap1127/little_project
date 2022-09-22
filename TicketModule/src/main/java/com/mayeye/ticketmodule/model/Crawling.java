@@ -7,6 +7,9 @@ public class Crawling {
 	private String title;
 	private String reserData;
 	private String info;
+	private String tag;
+	private String scriptText;
+	private String header;
 	
 	public String getField() {
 		return field;
@@ -43,6 +46,24 @@ public class Crawling {
 	}
 	public void setReserData(String reserData) {
 		this.reserData = reserData;
+	}
+	public String getScriptText() {
+		return scriptText;
+	}
+	public void setScriptText(String scriptText) {
+		this.scriptText = scriptText;
+	}
+	public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+	public String getHeader() {
+		return header;
+	}
+	public void setHeader(String header) {
+		this.header = header;
 	}
 
 }

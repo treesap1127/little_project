@@ -13,7 +13,7 @@
 <script>
 	var context="${pageContext.request.contextPath}";
 </script>
-<script src="js/make.js"></script>
+<script src="js/makeSe.js"></script>
 </head>
 <body>
 		<div class="dataset">
@@ -23,6 +23,8 @@
 			<input type="text" id="title" name="title" value="<c:out value=""/>" placeholder="title를 입력해주세요"/>
 			<label for="Field">Field:</label>
 			<input type="text" id="field" name="field" value="<c:out value=""/>" placeholder="선택자를 입력해주세요"/>
+			<label for="scriptText">JavaScriptCode:</label>
+			<input type="text" id="scriptText" name="scriptText" value="<c:out value=""/>" placeholder="스크립트문을 입력해주세요"/>
 			<a href="#" class="btn btn-primary" onclick="info()">결과보기!</a>
 		</div>
 		<div>

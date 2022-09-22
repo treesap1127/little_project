@@ -4,7 +4,7 @@
 <mapper namespace="crawling">
 	<insert id="save">
 		insert into crawling
-		values (null,#{url},#{field},#{title},#{reserData})
+		values (null,#{url},#{field},#{title},#{reserData},'1',null);
 	</insert>
 	
 	<select id="view" resultType="Crawling">
@@ -17,4 +17,8 @@
 		select *
 		from crawling
 	</select>
+	<insert id="sesave">
+		insert into crawling
+		values (null,#{url},#{field},#{title},#{reserData},'2',#{scriptText});
+	</insert>
 </mapper>

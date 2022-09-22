@@ -11,7 +11,9 @@
 </head>
 <body>
 <h1>  기본 페이지 </h1>
-<a class="btn btn-primary" href="<c:url value="/crawling"/>">크롤링하러가기</a>
-<a class="btn btn-primary" href="<c:url value="/list"/>">리스트보기</a>
+<a class="btn btn-primary" href="<c:url value="/crawling"/>">Jsoup 크롤링하러가기</a>
+<a class="btn btn-primary" href="<c:url value="/selenium"/>">셀레니움 크롤링하러가기</a>
+<a class="btn btn-primary" href="<c:url value="/list"/>">Jsoup 리스트보기</a>
+<a class="btn btn-primary" href="<c:url value="/seleniumList"/>">셀레니움 리스트보기</a>
 </body>
 </html>

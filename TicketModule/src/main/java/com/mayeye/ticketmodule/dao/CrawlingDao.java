@@ -12,4 +12,6 @@ public interface CrawlingDao {
 
 	List<Crawling> list();
 
+	void Sesave(Crawling cra);
+
 }

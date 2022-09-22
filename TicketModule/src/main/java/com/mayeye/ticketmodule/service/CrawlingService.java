@@ -12,4 +12,6 @@ public interface CrawlingService {
 
 	List<Crawling> list();
 
+	void Sesave(Crawling cra);
+
 }
